@@ -1,0 +1,21 @@
+<input type="text" placeholder="Search" (keyup)="search_data(student_detail)">
+
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Marks</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student_detail of student_details">
+            <td>{{student_detail?.id}}</td>
+            <td>{{student_detail?.first}}</td>
+            <td>{{student_detail?.age}}</td>
+            <td>{{student_detail?.subj1_marks}}</td>
+            <td>{{student_detail?.status}}</td>
+            <td (click)="detele_item(student_detail)">Delete</td>
+        </tr>
+    </tbody>
+</table>
