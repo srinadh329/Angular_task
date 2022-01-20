@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     for(let key of login_result){
       if(key[0]==form_name.name && key[1]==form_name.password){
         this.router.navigate(['dashboard'])
+        localStorage.setItem('all_users',JSON.stringify(login_details))
       }
     }
 

@@ -1,10 +1,10 @@
-<input type="text" placeholder="Search" (keyup)="search_data(student_detail)">
+<input type="text" placeholder="Search" (keyup)="search_data($event)">
 
 <table>
     <thead>
-        <th>Id</th>
+        <th>Id <mat-icon (click)="asyn()">arrow_drop_up</mat-icon></th>
         <th>Name</th>
-        <th>Age</th>
+        <th>Age <mat-icon>arrow_drop_up</mat-icon> <mat-icon>arrow_drop_down</mat-icon></th>
         <th>Marks</th>
         <th>Status</th>
     </thead>
