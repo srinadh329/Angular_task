@@ -65,8 +65,8 @@ export class TableComponent implements OnInit {
 
    
     // name exist for not
-      this.exit_details = this.student_details.every((x:any)=>x.first=="siva" && x.last == "siva")
-      console.log(this.exit_details)
+      this.exit_details = this.student_details.every((x:any)=>x.first =="siva" && x.last =="srinadh")
+      console.log(this.exit_details,'name exist')
       
     
     // name exist for not
