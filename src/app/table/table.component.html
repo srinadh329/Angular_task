@@ -1,5 +1,17 @@
+<p (click)="logout()">Logout</p>
+
+<mat-form-field appearance="fill">
+    <mat-select (OnChange)="someMethod($event)">
+      <mat-option value="hight">Hight to Low  </mat-option>
+      <mat-option value="low">Low to Hight</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
 <input type="text" placeholder="Search" (keyup)="search_data($event)">
 
+<p>total count: {{total_count}}</p>
+<a (click)="create()"><mat-icon>add</mat-icon></a>
 <table>
     <thead>
         <th>Id</th>
