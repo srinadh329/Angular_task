@@ -85,18 +85,26 @@ export class TableComponent implements OnInit {
   // delete function
 
   // search function
-  search_data(text:any){
-    // this.data = text.target.value
-    // console.log(this.data)
-    // this.student_details = this.table_search.filter((e:any)=>(this.data))
-    this.student_details = this.table_search.filter((e:any)=>{
-      console.log(e.name)
-      if(e.id.include(text)||e.first.include(text)||e.last.include(text) || e.name.include(text) || e.status.include(text) || e.subj1_marks.include(text) || 
-      e.subj2_marks.include(text) || e.subj3_marks.include(text) || e.subj4_marks.include(text) || e.total.include(text))
-     return e
+  // search_data(text:any){
+  //   // this.data = text.target.value
+  //   // console.log(this.data)
+  //   // this.student_details = this.table_search.filter((e:any)=>(this.data))
+  //   this.student_details= this.table_search.filter((e:any)=>{
+  //     console.log(e)
+  //     if(e.id.includes(text)||e.first.includes(text)||e.last.includes(text) || e.name.includes(text) || e.status.includes(text) || e.subj1_marks.includes(text) || 
+  //     e.subj2_marks.includes(text) || e.subj3_marks.includes(text) || e.subj4_marks.includes(text) || e.total.includes(text))
+  //    return e
 
-    })
+  //   })
+  // }
+  search(e:any){
+    this.table_search=this.student_details.filter((x:any) => {
+     if(x.id.toLowerCase().includes(e.toLowerCase()) || x.name.toLowerCase().includes(e.toLowerCase()) || x.age.toLowerCase().includes(e.toLowerCase()) || x.status.toLowerCase().includes(e.toLowerCase())|| x.total.toLowerCase().includes(e.toLowerCase())){
+       return x;
+    };
+    });
   }
+  
   // search function
 
 
