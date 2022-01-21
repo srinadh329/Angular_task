@@ -46,13 +46,7 @@ export class TableComponent implements OnInit {
 
   //  status
    this.status = this.student_details.every((x:any)=>{
-     if(x.subj1_marks>24 ||x.subj2_marks>24 || x.subj3_marks>24 || x.subj3_marks>24){
-       return 'pass'
-     }
-     else{
-      return "fail"
-     }
-    
+     return x.subj1_marks>24 && x.subj2_marks>24 && x.subj3_marks>24 && x.subj3_marks>24
    })
    console.log(this.status, 'status')
   //  status
@@ -92,12 +86,15 @@ export class TableComponent implements OnInit {
 
   // search function
   search_data(text:any){
-    this.data = text.target.value
-    console.log(this.data)
+    // this.data = text.target.value
+    // console.log(this.data)
     // this.student_details = this.table_search.filter((e:any)=>(this.data))
-    this.table_search = this.student_details.filter((e:any)=>{
-      console.log(e)
-     return e.include(this.data)
+    this.student_details = this.table_search.filter((e:any)=>{
+      console.log(e.name)
+      if(e.id.include(text)||e.first.include(text)||e.last.include(text) || e.name.include(text) || e.status.include(text) || e.subj1_marks.include(text) || 
+      e.subj2_marks.include(text) || e.subj3_marks.include(text) || e.subj4_marks.include(text) || e.total.include(text))
+     return e
+
     })
   }
   // search function
